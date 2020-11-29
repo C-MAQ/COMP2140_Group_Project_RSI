@@ -37,7 +37,7 @@ class setupUI:
         name = input("Enter name of interpreter: ")
         slang = input("Enter source language of interpreter: ")
         tlang = input("Enter target language of interpreter: ")
-        email = input("Enter email language of interpreter: ")
+        email = input("Enter email of interpreter: ")
         self.obj.addInterpreter(name,slang,tlang,email)
 
     def listint(self):
