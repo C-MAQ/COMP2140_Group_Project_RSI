@@ -30,8 +30,11 @@ class InterpretationManager:
             print(f'{name} not found in list of interpreters')
 
     def addLanguage(self, lang):
-        self.availableLanguages += [lang]
-        print(f'{lang} added to list of available languages')
+        if lang in self.availableLanguages:
+            print(f'{lang} is already an available language')
+        else:
+            self.availableLanguages += [lang]
+            print(f'{lang} added to list of available languages')
 
     def removeLanguage(self, lang):
         language = ""
@@ -45,7 +48,7 @@ class InterpretationManager:
                         self.interpretersList.pop(p)
         if language != "":
             if self.availableLanguages[language] != lang:
-                print(f'{lang} removed. {lang} not available')
+                print(f'{lang} removed. {lang} no longer available')
         else:
             print(f'{lang} not found in list of available languages')
 
@@ -54,7 +57,7 @@ class InterpretationManager:
             print("No interpreters have been assigned as yet")
             return
         for i in self.interpretersList:
-            print(f'Interpreter {i} : {self.interpretersList[i].name}')
+            print(f'Interpreter {i.name} : {i.sourcelang} ===> {i.targetlang}')
 
     def listChannels(self):
         for i in self.availableLanguages:

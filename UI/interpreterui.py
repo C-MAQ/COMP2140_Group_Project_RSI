@@ -50,5 +50,7 @@ class InterpreterUI:
                         self.dashboard(q)
                 break
             if option == '7':
+                print("EXITING INTERPRETER DASHBOARD...")
+                time.sleep(5)
                 break
 

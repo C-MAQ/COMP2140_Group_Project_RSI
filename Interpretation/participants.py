@@ -37,7 +37,7 @@ class Interpreter(MeetingParticipant):
                 print(f'{lang} is not available as a target language')
 
         def requestHandover(self, interpreter):
-            print(f'{self.name} requesting handover to {interpreter.name}')
+            print(f'{self.name} requesting handover to {interpreter.name}...')
 
         def acceptHandover(self, interpreter):
             print(f'{self.name} accepted handover')
