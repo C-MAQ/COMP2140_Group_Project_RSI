@@ -1,6 +1,7 @@
 from Interpretation import participants
 
-
+""" System to manage Interpretations including Adding and Removing an Interpreter, Adding and Removing Languages,
+List Interpreters and Channels, as well as, Making an Interpreter """
 class InterpretationManager:
     def __init__(self):
         self.defaultLanguage = "ENGLISH"
