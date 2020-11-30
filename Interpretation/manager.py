@@ -62,3 +62,6 @@ class InterpretationManager:
     def listChannels(self):
         for i in self.availableLanguages:
             print(i)
+
+    def makeInterpreter(self, attendee):
+        pass

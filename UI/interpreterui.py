@@ -53,4 +53,3 @@ class InterpreterUI:
                 print("EXITING INTERPRETER DASHBOARD...")
                 time.sleep(5)
                 break
-
