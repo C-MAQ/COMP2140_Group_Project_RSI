@@ -10,7 +10,7 @@ class SetupUI:
 
     def go(self):
         while True:
-            print("******************************")
+            print("\n******************************")
             print("INTERPRETATION SETTINGS")
             print("******************************")
             print("1 - ADD LANGUAGE")
@@ -21,7 +21,7 @@ class SetupUI:
             print("6 - LIST AVAILABLE LANGUAGES")
             print("7 - START MEETING")
             print("8 - EXIT")
-            option = input("Select an option: ")
+            option = input("\nSelect an option: ")
             if option == '1':
                 self.addlang()
             if option == '3':
@@ -29,6 +29,7 @@ class SetupUI:
             if option == '4':
                 self.removeint()
             if option == '8':
+                print("\nCLOSING INTERPRETATION MODULE")
                 sys.exit()
             if option == '2':
                 self.addint()

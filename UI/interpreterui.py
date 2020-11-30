@@ -23,7 +23,7 @@ class InterpreterUI:
             print("5 - REQUEST HANDOVER")
             print("6 - ACCEPT HANDOVER")
             print("7 - END INTERPRETATION")
-            option = input("Choose and option: ")
+            option = input("Choose an option: ")
             if option == '3':
                 print("Available language channels:")
                 self.manager.listChannels()
@@ -44,9 +44,7 @@ class InterpreterUI:
                     if q.name == choice:
                         name.requestHandover(q)
                         time.sleep(5)
-                        q.acceptHandover(name)
-                        q.selectTargetLanguage(self.manager, name.targetlang)
-                        q.selectSourceLanguage(self.manager, name.sourcelang)
+                        q.acceptHandover(self.manager, name)
                         self.dashboard(q)
                 break
             if option == '7':

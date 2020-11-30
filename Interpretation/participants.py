@@ -39,9 +39,11 @@ class Interpreter(MeetingParticipant):
         def requestHandover(self, interpreter):
             print(f'{self.name} requesting handover to {interpreter.name}...')
 
-        def acceptHandover(self, interpreter):
+        def acceptHandover(self,manager, interpreter):
+            self.selectTargetLanguage(manager, interpreter.targetlang)
+            self.selectSourceLanguage(manager, interpreter.sourcelang)
             print(f'{self.name} accepted handover')
-            print(f'{self.name} now interpreting into {interpreter.targetlang}')
+            print(f'{self.name} now interpreting into {self.targetlang}')
 
 
 class Attendee(MeetingParticipant):
