@@ -45,4 +45,7 @@ class Interpreter(MeetingParticipant):
 
 
 class Attendee(MeetingParticipant):
+    """TODO"""
+    def __init__(self, name):
+        super().__init__(name)
     pass
