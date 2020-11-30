@@ -1,6 +1,6 @@
 import time
 
-
+""" User Interface for Interpreters """ 
 class InterpreterUI:
     def __init__(self, manager):
         self.manager = manager
