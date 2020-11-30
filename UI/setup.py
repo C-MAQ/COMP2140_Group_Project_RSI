@@ -6,6 +6,7 @@ class SetupUI:
     def __init__(self, manager):
         self.obj = manager
 
+    """Menu Interface for the host of the meeting"""
     def mainmenu(self):
         while True:
             print("\n******************************")
@@ -42,6 +43,8 @@ class SetupUI:
                 else:
                     self.selectui()
 
+    """Input method to read data from the user about
+        the interpreter being added"""
     def addint(self):
         name = input("\nEnter name of interpreter: ")
         slang = input("Enter source language of interpreter: ")
@@ -49,10 +52,12 @@ class SetupUI:
         email = input("Enter email of interpreter: ")
         self.obj.addInterpreter(name, slang, tlang, email)
 
+    """Method to print a list of all the availiable interpreters"""
     def listint(self):
         print("\nAvailable interpreters:")
         self.obj.listInterpreters()
 
+    """Input method to read the language being added to the list"""
     def addlang(self):
         lang = input("Which language would like to add?: ")
         self.obj.addLanguage(lang)
@@ -67,6 +72,8 @@ class SetupUI:
         lang = input("Which language do you want to remove?: ")
         self.obj.removeLanguage(lang)
 
+    """Method to access specific interface based on which
+        the type of user is using the system"""
     def selectui(self):
         choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) ?: ")
         if choice == 'I':
