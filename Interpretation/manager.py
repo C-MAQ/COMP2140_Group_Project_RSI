@@ -53,9 +53,11 @@ class InterpretationManager:
             print(f'{lang} not found in list of available languages')
 
     def listInterpreters(self):
+        print("\n")
         if len(self.interpretersList) == 0:
             print("No interpreters have been assigned as yet")
             return
+        print("Available Interpreters:")
         for i in self.interpretersList:
             print(f'Interpreter {i.name} : {i.sourcelang} ===> {i.targetlang}')
 
@@ -64,4 +66,5 @@ class InterpretationManager:
             print(i)
 
     def makeInterpreter(self, attendee):
+        """TODO Assign interpreter role to attendee"""
         pass

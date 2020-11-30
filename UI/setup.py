@@ -69,7 +69,8 @@ class SetupUI:
     def selectui(self):
         choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) ?: ")
         if choice == 'I':
-            name = input("Name of Interpreter?: ")
+            self.obj.listInterpreters()
+            name = input("Select name of Interpreter?: ")
             for i in self.obj.interpretersList:
                 if i.name == name:
                     ui = interpreterui.InterpreterUI(self.obj)
