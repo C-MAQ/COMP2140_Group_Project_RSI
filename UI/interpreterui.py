@@ -1,8 +1,14 @@
+import time
+
+
 class InterpreterUI:
     def __init__(self, manager):
         self.manager = manager
 
     def go(self, name):
+        self.dashboard(name)
+
+    def dashboard(self, name):
         while True:
             print("******************************")
             print("INTERPRETER DASHBOARD")
@@ -16,5 +22,22 @@ class InterpreterUI:
             print("3 - SELECT INCOMING CHANNEL")
             print("5 - REQUEST HANDOVER")
             print("6 - ACCEPT HANDOVER")
-            input()
+            print("7 - END INTERPRETATION")
+            option = input("Choose and option: ")
+            if option == '5':
+                print("HANDOVER REQUEST")
+                print("Interpreters available for handover request:")
+                available = [n for n in self.manager.interpretersList if n.name != name.name]
+                for i in available:
+                    print(i.name)
+                choice = input("Who would you like to handover to?: ")
+                for q in available:
+                    if q.name == choice:
+                        name.requestHandover(q)
+                        time.sleep(5)
+                        q.acceptHandover(name)
+                        self.dashboard(q)
+                break
+            if option == '7':
+                break
 
