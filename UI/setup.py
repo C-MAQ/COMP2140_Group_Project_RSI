@@ -50,6 +50,7 @@ class SetupUI:
         self.obj.addInterpreter(name, slang, tlang, email)
 
     def listint(self):
+        print("\nAvailable interpreters:")
         self.obj.listInterpreters()
 
     def addlang(self):
