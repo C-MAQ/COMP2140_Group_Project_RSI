@@ -62,6 +62,7 @@ class InterpretationManager:
             print(f'Interpreter {i.name} : {i.sourcelang} ===> {i.targetlang}')
 
     def listChannels(self):
+        print("\nAvailable languages:")
         for i in self.availableLanguages:
             print(i)
 
