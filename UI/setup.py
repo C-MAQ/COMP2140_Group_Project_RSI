@@ -3,7 +3,8 @@ from Interpretation import participants
 from UI import interpreterui
 import sys
 
-class setupUI:
+
+class SetupUI:
     def __init__(self, manager):
         self.obj = manager
 
@@ -47,7 +48,7 @@ class setupUI:
         slang = input("Enter source language of interpreter: ")
         tlang = input("Enter target language of interpreter: ")
         email = input("Enter email of interpreter: ")
-        self.obj.addInterpreter(name,slang,tlang,email)
+        self.obj.addInterpreter(name, slang, tlang, email)
 
     def listint(self):
         self.obj.listInterpreters()
@@ -75,4 +76,5 @@ class setupUI:
                     ui = interpreterui.InterpreterUI(self.obj)
                     ui.go(i)
                     break
-
+        if choice == 'A':
+            print("Attendee UI not yet implemented")

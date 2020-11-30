@@ -5,7 +5,7 @@ from UI import interpreterui
 
 if __name__ == '__main__':
     m = manager.InterpretationManager()
-    s = setup.setupUI(m).go()
+    s = setup.SetupUI(m).go()
 
 
 
