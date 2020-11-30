@@ -8,4 +8,5 @@ class Database:
         pass
 
     def update(self):
+        """Refresh session data"""
         pass
