@@ -55,3 +55,7 @@ class InterpretationManager:
             return
         for i in self.interpretersList:
             print(f'Interpreter {i} : {self.interpretersList[i].name}')
+
+    def listChannels(self):
+        for i in self.availableLanguages:
+            print(i)
