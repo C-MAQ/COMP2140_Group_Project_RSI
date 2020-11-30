@@ -8,6 +8,7 @@ class InterpreterUI:
     def go(self, name):
         self.dashboard(name)
 
+    """Menu interface for the interpreters of the meeting"""
     def dashboard(self, name):
         while True:
             print("\n******************************")
