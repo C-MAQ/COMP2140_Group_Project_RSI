@@ -2,12 +2,17 @@ from Interpretation import participants
 
 
 class InterpretationManager:
+    """Constructor: set the default language, a null list
+        of interpreters and a list of languages availiable"""
     def __init__(self):
         self.defaultLanguage = "ENGLISH"
         self.interpretersList = []
         self.availableLanguages = []
         self.availableLanguages += [self.defaultLanguage]
 
+    """Setter: adds a specified interpreter to the list of
+        interpreters, using their name, source and target languages
+        and email"""
     def addInterpreter(self, name, sourcelang, targetlang, email):
         interpreter = participants.Interpreter(name, sourcelang, targetlang, email)
         self.interpretersList += [interpreter]
@@ -17,6 +22,7 @@ class InterpretationManager:
         if not targetlang in self.availableLanguages:
             self.availableLanguages += [targetlang]
 
+    """Method to remove a specified interpreter from interpreters list"""
     def removeInterpreter(self, name):
         person = ""
         for i, j in enumerate(self.interpretersList):
@@ -29,6 +35,8 @@ class InterpretationManager:
         else:
             print(f'{name} not found in list of interpreters')
 
+   """Setter: adds specified language to the list of available 
+        languages""""
     def addLanguage(self, lang):
         if lang in self.availableLanguages:
             print(f'{lang} is already an available language')
@@ -36,6 +44,7 @@ class InterpretationManager:
             self.availableLanguages += [lang]
             print(f'{lang} added to list of available languages')
 
+    """Method to remove a specified language from list"""
     def removeLanguage(self, lang):
         language = ""
         for i, j in enumerate(self.availableLanguages):
@@ -52,6 +61,7 @@ class InterpretationManager:
         else:
             print(f'{lang} not found in list of available languages')
 
+            
     def listInterpreters(self):
         print("\n")
         if len(self.interpretersList) == 0:
