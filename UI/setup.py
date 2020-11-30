@@ -1,17 +1,15 @@
-from Interpretation import manager
-from Interpretation import participants
-from UI import interpreterui
 import sys
+from UI import interpreterui
 
 
 class SetupUI:
     def __init__(self, manager):
         self.obj = manager
 
-    def go(self):
+    def mainmenu(self):
         while True:
             print("\n******************************")
-            print("INTERPRETATION SETTINGS")
+            print("INTERPRETATION MODULE SETTINGS")
             print("******************************")
             print("1 - ADD LANGUAGE")
             print("2 - ADD INTERPRETER")
@@ -45,7 +43,7 @@ class SetupUI:
                     self.selectui()
 
     def addint(self):
-        name = input("Enter name of interpreter: ")
+        name = input("\nEnter name of interpreter: ")
         slang = input("Enter source language of interpreter: ")
         tlang = input("Enter target language of interpreter: ")
         email = input("Enter email of interpreter: ")
@@ -60,7 +58,7 @@ class SetupUI:
 
     def removeint(self):
         self.obj.listInterpreters()
-        name = input("Name of Interpreter to remove: ")
+        name = input("Name of interpreter to remove: ")
         self.obj.removeInterpreter(name)
 
     def removelang(self):
@@ -69,7 +67,7 @@ class SetupUI:
         self.obj.removeLanguage(lang)
 
     def selectui(self):
-        choice = input("View as INTERPRETER (I) or ATTENDEE (A) ?: ")
+        choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) ?: ")
         if choice == 'I':
             name = input("Name of Interpreter?: ")
             for i in self.obj.interpretersList:
@@ -78,4 +76,4 @@ class SetupUI:
                     ui.go(i)
                     break
         if choice == 'A':
-            print("Attendee UI not yet implemented")
+            print("\nAttendee UI not yet implemented")

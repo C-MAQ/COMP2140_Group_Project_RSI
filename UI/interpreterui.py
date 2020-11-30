@@ -10,7 +10,7 @@ class InterpreterUI:
 
     def dashboard(self, name):
         while True:
-            print("******************************")
+            print("\n******************************")
             print("INTERPRETER DASHBOARD")
             print("******************************")
             print(f'You are now {name.name} and Interpreting from {name.sourcelang} to {name.targetlang}')
@@ -23,7 +23,7 @@ class InterpreterUI:
             print("5 - REQUEST HANDOVER")
             print("6 - ACCEPT HANDOVER")
             print("7 - END INTERPRETATION")
-            option = input("Choose an option: ")
+            option = input("\nChoose an option: ")
             if option == '3':
                 print("Available language channels:")
                 self.manager.listChannels()
@@ -48,6 +48,6 @@ class InterpreterUI:
                         self.dashboard(q)
                 break
             if option == '7':
-                print("EXITING INTERPRETER DASHBOARD...")
+                print("\nEXITING INTERPRETER DASHBOARD...")
                 time.sleep(5)
                 break
