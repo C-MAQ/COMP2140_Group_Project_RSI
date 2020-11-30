@@ -17,16 +17,17 @@ class setupUI:
             print("3 - REMOVE LANGUAGE")
             print("4 - REMOVE INTERPRETER")
             print("5 - LIST INTERPRETERS")
-            print("6 - START MEETING")
-            print("7 - EXIT")
+            print("6 - LIST AVAILABLE LANGUAGES")
+            print("7 - START MEETING")
+            print("8 - EXIT")
             option = input("Select an option: ")
-            if option == '7':
+            if option == '8':
                 sys.exit()
             if option == '2':
                 self.addint()
             if option == '5':
                 self.listint()
-            if option == '6':
+            if option == '7':
                 if len(self.obj.interpretersList) < 2:
                     print("At least two interpreters have to be added first")
                     continue
