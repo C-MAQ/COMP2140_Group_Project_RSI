@@ -1,4 +1,5 @@
 import sys
+import time
 from UI import interpreterui
 
 
@@ -11,7 +12,7 @@ class SetupUI:
         while True:
             print("\n******************************")
             print("INTERPRETATION MODULE SETTINGS")
-            print("******************************")
+            print("******************************\n")
             print("1 - ADD LANGUAGE")
             print("2 - ADD INTERPRETER")
             print("3 - REMOVE LANGUAGE")
@@ -39,6 +40,7 @@ class SetupUI:
             if option == '7':
                 if len(self.obj.interpretersList) < 2:
                     print("At least two interpreters have to be added first")
+                    time.sleep(2)
                     continue
                 else:
                     self.selectui()
@@ -59,7 +61,7 @@ class SetupUI:
 
     """Input method to read the language being added to the list"""
     def addlang(self):
-        lang = input("Which language would like to add?: ")
+        lang = input("Which language would like to add? : ")
         self.obj.addLanguage(lang)
 
     def removeint(self):
@@ -69,16 +71,16 @@ class SetupUI:
 
     def removelang(self):
         self.obj.listChannels()
-        lang = input("Which language do you want to remove?: ")
+        lang = input("Which language do you want to remove? : ")
         self.obj.removeLanguage(lang)
 
     """Method to access specific interface based on which
         the type of user is using the system"""
     def selectui(self):
-        choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) ?: ")
-        if choice == 'I':
+        choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) : ")
+        if choice == 'I' or choice == 'i':
             self.obj.listInterpreters()
-            name = input("Select name of Interpreter?: ")
+            name = input("Select name of Interpreter: ")
             for i in self.obj.interpretersList:
                 if i.name == name:
                     ui = interpreterui.InterpreterUI(self.obj)
