@@ -61,7 +61,7 @@ class SetupUI:
 
     """Input method to read the language being added to the list"""
     def addlang(self):
-        lang = input("Which language would like to add? : ")
+        lang = input("Which language would you like to add? : ")
         self.obj.addLanguage(lang)
 
     def removeint(self):
