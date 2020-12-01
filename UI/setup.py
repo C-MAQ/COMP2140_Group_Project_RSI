@@ -64,11 +64,13 @@ class SetupUI:
         lang = input("Which language would you like to add? : ")
         self.obj.addLanguage(lang)
 
+    """Method that removes a selected interpreter from the list"""
     def removeint(self):
         self.obj.listInterpreters()
         name = input("Name of interpreter to remove: ")
         self.obj.removeInterpreter(name)
 
+    """Method that removes a selected language from the list"""
     def removelang(self):
         self.obj.listChannels()
         lang = input("Which language do you want to remove? : ")
