@@ -13,11 +13,11 @@ class InterpreterUI:
         while True:
             print("\n******************************")
             print("INTERPRETER DASHBOARD")
-            print("******************************")
+            print("******************************\n")
             print(f'You are now {name.name} and Interpreting from {name.sourcelang} to {name.targetlang}')
             print(f'INCOMING CHANNEL: {name.sourcelang}')
             print(f'OUTGOING CHANNEL: {name.targetlang}')
-            print("Interpreter Options:")
+            print("\nInterpreter Options:")
             print("1 - ADD OUTGOING CHANNEL")
             print("2 - REMOVE OUTGOING CHANNEL")
             print("3 - SELECT INCOMING CHANNEL")
@@ -26,7 +26,6 @@ class InterpreterUI:
             print("7 - END INTERPRETATION")
             option = input("\nChoose an option: ")
             if option == '3':
-                print("Available language channels:")
                 self.manager.listChannels()
                 lang = input("Select incoming language channel: ")
                 if lang in self.manager.availableLanguages:
@@ -40,7 +39,7 @@ class InterpreterUI:
                 available = [n for n in self.manager.interpretersList if n.name != name.name]
                 for i in available:
                     print(i.name)
-                choice = input("Who would you like to handover to?: ")
+                choice = input("Who would you like to handover to? : ")
                 for q in available:
                     if q.name == choice:
                         name.requestHandover(q)
