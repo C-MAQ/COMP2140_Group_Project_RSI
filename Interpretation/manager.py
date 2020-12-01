@@ -4,7 +4,7 @@ from Interpretation import participants
 List Interpreters and Channels, as well as, Making an Interpreter """
 class InterpretationManager:
     def __init__(self):
-        self.defaultLanguage = "ENGLISH"
+        self.defaultLanguage = "English"
         self.interpretersList = []
         self.availableLanguages = []
         self.availableLanguages += [self.defaultLanguage]
