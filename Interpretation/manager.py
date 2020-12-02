@@ -10,6 +10,7 @@ class InterpretationManager:
         self.availableLanguages += [self.defaultLanguage]
 
     def addInterpreter(self, name, sourcelang, targetlang, email):
+        """Adds an interpreter to an existing list of interpreters"""
         interpreter = participants.Interpreter(name, sourcelang, targetlang, email)
         self.interpretersList += [interpreter]
         print(f'{interpreter.name} added as {interpreter.targetlang} interpreter')
@@ -19,6 +20,7 @@ class InterpretationManager:
             self.availableLanguages += [targetlang]
 
     def removeInterpreter(self, name):
+        """Removes a selected interpreter from the list of interpreters"""
         person = ""
         for i, j in enumerate(self.interpretersList):
             if j.name == name:
@@ -31,6 +33,7 @@ class InterpretationManager:
             print(f'{name} not found in list of interpreters')
 
     def addLanguage(self, lang):
+        """Adds a new language to a list of available languages for interpretation"""
         if lang in self.availableLanguages:
             print(f'{lang} is already an available language')
         else:
@@ -38,6 +41,7 @@ class InterpretationManager:
             print(f'{lang} added to list of available languages')
 
     def removeLanguage(self, lang):
+        """Removes a language from the list of available languages"""
         language = ""
         for i, j in enumerate(self.availableLanguages):
             if j == lang:
@@ -54,6 +58,7 @@ class InterpretationManager:
             print(f'{lang} not found in list of available languages')
 
     def listInterpreters(self):
+        """Displays a list of the available interpreters along with their source and target interpretation language"""
         print("\n")
         if len(self.interpretersList) == 0:
             print("No interpreters have been assigned as yet")
@@ -63,6 +68,7 @@ class InterpretationManager:
             print(f'Interpreter {i.name} : {i.sourcelang} ===> {i.targetlang}')
 
     def listChannels(self):
+        """Displays the list of available languages"""
         print("\nAvailable languages:")
         for i in self.availableLanguages:
             print(i)
