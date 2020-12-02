@@ -2,7 +2,7 @@
 
 Code for Interpretation Module Prototype
 
-System Architecture
+## System Architecture
 ![architecture diagram](https://i.imgur.com/6InkB4e.png)
 
 Design Notes
