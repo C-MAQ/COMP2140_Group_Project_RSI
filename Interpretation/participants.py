@@ -6,7 +6,8 @@ class MeetingParticipant:
         self.name = name
         self.sourcelang = "ENGLISH"
 
-    def selectSourceLanguage(self, manager, lang):
+    def selectSourceLanguage(self, manager, lang): 
+        """Method that allows the participant to select a source language for interpretation from the list of available languages"""
         templang = ""
         for i, j in enumerate(manager.availableLanguages):
             if j == lang:
@@ -29,6 +30,7 @@ class Interpreter(MeetingParticipant):
             self.email = email
 
         def selectTargetLanguage(self, manager, lang):
+            """Allows interpreter to set the language they will be interpreting to"""
             templang = ""
             for i, j in enumerate(manager.availableLanguages):
                 if j == lang:
@@ -40,13 +42,15 @@ class Interpreter(MeetingParticipant):
                 print(f'{lang} is not available as a target language')
 
         def requestHandover(self, interpreter):
+            """Method to allow an interpreter to request handover to another interpreter"""
             print(f'{self.name} requesting handover to {interpreter.name}...')
 
         def acceptHandover(self,manager, interpreter):
+            """Method that updates the source and target language of the interpreter that accepted the handover request"""
             self.selectTargetLanguage(manager, interpreter.targetlang)
             self.selectSourceLanguage(manager, interpreter.sourcelang)
             print(f'{self.name} accepted handover')
-            print(f'{self.name} now interpreting into {self.targetlang}')
+            print(f'{self.name} is now interpreting into {self.targetlang}')
 
 
 class Attendee(MeetingParticipant):

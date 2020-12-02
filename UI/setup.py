@@ -1,4 +1,5 @@
 import sys
+import time
 from UI import interpreterui
 
 
@@ -6,11 +7,12 @@ class SetupUI:
     def __init__(self, manager):
         self.obj = manager
 
+    """Menu Interface for the host of the meeting"""
     def mainmenu(self):
         while True:
             print("\n******************************")
             print("INTERPRETATION MODULE SETTINGS")
-            print("******************************")
+            print("******************************\n")
             print("1 - ADD LANGUAGE")
             print("2 - ADD INTERPRETER")
             print("3 - REMOVE LANGUAGE")
@@ -38,10 +40,13 @@ class SetupUI:
             if option == '7':
                 if len(self.obj.interpretersList) < 2:
                     print("At least two interpreters have to be added first")
+                    time.sleep(2)
                     continue
                 else:
                     self.selectui()
 
+    """Input method to read data from the user about
+        the interpreter being added"""
     def addint(self):
         name = input("\nEnter name of interpreter: ")
         slang = input("Enter source language of interpreter: ")
@@ -49,29 +54,35 @@ class SetupUI:
         email = input("Enter email of interpreter: ")
         self.obj.addInterpreter(name, slang, tlang, email)
 
+    """Method to print a list of all the availiable interpreters"""
     def listint(self):
         print("\nAvailable interpreters:")
         self.obj.listInterpreters()
 
+    """Input method to read the language being added to the list"""
     def addlang(self):
-        lang = input("Which language would like to add?: ")
+        lang = input("Which language would you like to add? : ")
         self.obj.addLanguage(lang)
 
+    """Method that removes a selected interpreter from the list"""
     def removeint(self):
         self.obj.listInterpreters()
         name = input("Name of interpreter to remove: ")
         self.obj.removeInterpreter(name)
 
+    """Method that removes a selected language from the list"""
     def removelang(self):
         self.obj.listChannels()
-        lang = input("Which language do you want to remove?: ")
+        lang = input("Which language do you want to remove? : ")
         self.obj.removeLanguage(lang)
 
+    """Method to access specific interface based on which
+        the type of user is using the system"""
     def selectui(self):
-        choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) ?: ")
-        if choice == 'I':
+        choice = input("\nView as INTERPRETER (I) or ATTENDEE (A) : ")
+        if choice == 'I' or choice == 'i':
             self.obj.listInterpreters()
-            name = input("Select name of Interpreter?: ")
+            name = input("Select name of Interpreter: ")
             for i in self.obj.interpretersList:
                 if i.name == name:
                     ui = interpreterui.InterpreterUI(self.obj)
