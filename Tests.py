@@ -5,6 +5,7 @@ from Interpretation.participants import *
 class TestBattery:
     def __init__(self):
         self.mgr = manager.InterpretationManager()
+        print("TESTING MODULE\n")
 
     def SelectIncomingChannel(self):
         print('********************************************')
