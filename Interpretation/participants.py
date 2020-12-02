@@ -1,3 +1,6 @@
+from Interpretation import manager
+
+
 class MeetingParticipant:
     def __init__(self, name):
         self.name = name
@@ -51,3 +54,5 @@ class Attendee(MeetingParticipant):
     def __init__(self, name):
         super().__init__(name)
     pass
+
+

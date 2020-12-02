@@ -69,3 +69,4 @@ class InterpretationManager:
     def makeInterpreter(self, attendee):
         """TODO Assign interpreter role to attendee"""
         pass
+
