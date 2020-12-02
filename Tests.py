@@ -27,7 +27,6 @@ class TestBattery:
         interpreter1.selectSourceLanguage(self.mgr, 'JAPANESE')
 
 
-
 if __name__ == '__main__':
     test = TestBattery()
     test.SelectIncomingChannel()
