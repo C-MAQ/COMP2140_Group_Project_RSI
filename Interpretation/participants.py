@@ -4,7 +4,7 @@ class MeetingParticipant:
         self.sourcelang = "ENGLISH"
 
     def selectSourceLanguage(self, manager, lang): 
-        """Method that allows the participant to select a source language for interpretation"""
+        """Method that allows the participant to select a source language for interpretation from the list of available languages"""
         templang = ""
         for i, j in enumerate(manager.availableLanguages):
             if j == lang:
@@ -27,7 +27,7 @@ class Interpreter(MeetingParticipant):
             self.email = email
 
         def selectTargetLanguage(self, manager, lang):
-            """Allows user to set the language they will be interpreting to"""
+            """Allows interpreter to set the language they will be interpreting to"""
             templang = ""
             for i, j in enumerate(manager.availableLanguages):
                 if j == lang:
