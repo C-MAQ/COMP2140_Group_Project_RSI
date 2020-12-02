@@ -5,7 +5,7 @@ Code for Interpretation Module Prototype
 ## System Architecture
 ![architecture diagram](https://i.imgur.com/6InkB4e.png)
 
-## Component Decompsition
+## Component Decompsition of Interpretation Module
 ![class diagram](https://i.imgur.com/jc1jUZS.png)
 
 ## Design Notes
