@@ -14,7 +14,7 @@ class InterpreterUI:
             print("\n******************************")
             print("INTERPRETER DASHBOARD")
             print("******************************\n")
-            print(f'You are {name.name} and now Interpreting from {name.sourcelang} to {name.targetlang}')
+            print(f'You are {name.name} and now interpreting from {name.sourcelang} to {name.targetlang}')
             print(f'INCOMING CHANNEL: {name.sourcelang}')
             print(f'OUTGOING CHANNEL: {name.targetlang}')
             print("\nInterpreter Options:")
