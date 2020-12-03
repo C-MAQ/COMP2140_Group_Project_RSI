@@ -47,6 +47,7 @@ class InterpreterUI:
                         q.acceptHandover(self.manager, name)
                         self.dashboard(q)
                         print ("Handover request sent")
+                     print (choice + " is not an available interpreter") 
                 break
             if option == '7':
                 print("\nEXITING INTERPRETER DASHBOARD...")
