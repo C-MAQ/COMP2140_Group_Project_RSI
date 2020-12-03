@@ -50,7 +50,7 @@ class Interpreter(MeetingParticipant):
             self.selectTargetLanguage(manager, interpreter.targetlang)
             self.selectSourceLanguage(manager, interpreter.sourcelang)
             print(f'{self.name} accepted handover')
-            print(f'{self.name} is now interpreting into {self.targetlang}')
+            print(f'{self.name} is now interpreting to {self.targetlang}')
 
 
 class Attendee(MeetingParticipant):
