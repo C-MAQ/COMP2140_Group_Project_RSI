@@ -1,4 +1,4 @@
-# COMP2140_Group_Project_RSI
+# Software Engineering Project_RSI
 
 Remote Simultaneous Interpretating System - Module Prototype
 
